@@ -1,0 +1,242 @@
+<Project>
+  <Name>A4 - Concordance</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>A4 Initial Design</Name>
+    <Language>Java</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>ConcordanceDataElement</Name>
+        <Access>Public</Access>
+        <Location left="745" top="1312" />
+        <Size width="349" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String word</Member>
+        <Member type="Field">private LinkedList&lt;Integer&gt; lineNumbers</Member>
+        <Member type="Constructor">public ConcordanceDataElement(String word)</Member>
+        <Member type="Method">public void addPage()</Member>
+        <Member type="Method">public int compareTo(ConcordanceDataElement anotherDataElement)</Member>
+        <Member type="Method">public LinkedList&lt;Integer&gt; getList()</Member>
+        <Member type="Method">public String getWord()</Member>
+        <Member type="Method">public int hashCode()</Member>
+        <Member type="Method">public String toString()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ConcordanceDataStructure</Name>
+        <Access>Public</Access>
+        <Location left="745" top="973" />
+        <Size width="349" height="281" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private ArrayList&lt;LinkedList&lt;ConcordanceDataElement&gt;&gt; hashTable</Member>
+        <Member type="Field">private int size</Member>
+        <Member type="Field">private double loadingFactor</Member>
+        <Member type="Constructor">public ConcordanceDataStructure(int estimatedEntries)</Member>
+        <Member type="Constructor">public ConcordanceDataStructure(String test, int size)</Member>
+        <Member type="Method">public int getTableSize()</Member>
+        <Member type="Method">public ArrayList&lt;String&gt; getWords(int index)</Member>
+        <Member type="Method">public ArrayList&lt;LinkedList&lt;Integer&gt;&gt; getPageNumbers(int index)</Member>
+        <Member type="Method">public void add(String word, int lineNum)</Member>
+        <Member type="Method">public ArrayList&lt;String&gt; showAll()</Member>
+        <Member type="Method">public int calcSize(int estimatedEntries)</Member>
+        <Member type="Method">public boolean isPrime(int num)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ConcordanceDataManager</Name>
+        <Access>Public</Access>
+        <Location left="745" top="776" />
+        <Size width="349" height="138" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public ConcordanceDataManager()</Member>
+        <Member type="Method">public ArrayList&lt;String&gt; createConcordanceArray(String input)</Member>
+        <Member type="Method">public boolean createConcordanceFile(File input, File output)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Interface">
+        <Name>ConcordanceDataStructureInterface</Name>
+        <Access>Public</Access>
+        <Location left="433" top="973" />
+        <Size width="260" height="77" />
+        <Collapsed>False</Collapsed>
+      </Entity>
+      <Entity type="Interface">
+        <Name>ConcordanceDataManagerInterface</Name>
+        <Access>Public</Access>
+        <Location left="433" top="776" />
+        <Size width="260" height="77" />
+        <Collapsed>False</Collapsed>
+      </Entity>
+      <Entity type="Comment">
+        <Text>Based on provided JavaDoc</Text>
+        <Location left="1135" top="973" />
+        <Size width="160" height="75" />
+      </Entity>
+      <Entity type="Comment">
+        <Text>Based on provided JavaDoc</Text>
+        <Location left="1135" top="1312" />
+        <Size width="160" height="75" />
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Realization" first="2" second="4">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="1" second="3">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="0" second="1">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="1" second="2">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Comment" first="6" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Comment" first="5" second="1">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>A4 Final Design</Name>
+    <Language>Java</Language>
+    <Entities>
+      <Entity type="Interface">
+        <Name>ConcordanceDataManagerInterface</Name>
+        <Access>Public</Access>
+        <Location left="476" top="1389" />
+        <Size width="260" height="77" />
+        <Collapsed>False</Collapsed>
+      </Entity>
+      <Entity type="Interface">
+        <Name>ConcordanceDataStructureInterface</Name>
+        <Access>Public</Access>
+        <Location left="476" top="1714" />
+        <Size width="260" height="77" />
+        <Collapsed>False</Collapsed>
+      </Entity>
+      <Entity type="Class">
+        <Name>ConcordanceDataManager</Name>
+        <Access>Public</Access>
+        <Location left="788" top="1389" />
+        <Size width="349" height="247" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private ConcordanceDataStructure structure</Member>
+        <Member type="Field">private Scanner scan</Member>
+        <Member type="Field">private int lineNum</Member>
+        <Member type="Constructor">public ConcordanceDataManager()</Member>
+        <Member type="Method">public ArrayList&lt;String&gt; createConcordanceArray(String input)</Member>
+        <Member type="Method">public boolean createConcordanceFile(File input, File output)</Member>
+        <Member type="Method">public String formatInput(String s)</Member>
+        <Member type="Method">public String removePunctuation(String s)</Member>
+        <Member type="Method">public String removeSmallWords(String s)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ConcordanceDataStructure</Name>
+        <Access>Public</Access>
+        <Location left="788" top="1714" />
+        <Size width="573" height="332" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private ArrayList&lt;LinkedList&lt;ConcordanceDataElement&gt;&gt; hashTable</Member>
+        <Member type="Field">private int size</Member>
+        <Member type="Field">private double loadingFactor</Member>
+        <Member type="Constructor">public ConcordanceDataStructure(int estimatedEntries)</Member>
+        <Member type="Constructor">public ConcordanceDataStructure(String test, int size)</Member>
+        <Member type="Method">public void initialize()</Member>
+        <Member type="Method">public int getTableSize()</Member>
+        <Member type="Method">public ArrayList&lt;String&gt; getWords(int index)</Member>
+        <Member type="Method">public ArrayList&lt;ConcordanceDataElement&gt; getAllElements()</Member>
+        <Member type="Method">public ArrayList&lt;ConcordanceDataElement&gt; getAlphaSortedWords(ArrayList&lt;ConcordanceDataElement&gt; unsorted)</Member>
+        <Member type="Method">public ArrayList&lt;LinkedList&lt;Integer&gt;&gt; getPageNumbers(int index)</Member>
+        <Member type="Method">public void add(String word, int lineNum)</Member>
+        <Member type="Method">public ArrayList&lt;String&gt; showAll()</Member>
+        <Member type="Method">public int calcSize(int estimatedEntries)</Member>
+        <Member type="Method">public boolean isPrime(int num)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ConcordanceDataElement</Name>
+        <Access>Public</Access>
+        <Location left="788" top="2147" />
+        <Size width="349" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private String word</Member>
+        <Member type="Field">private LinkedList&lt;Integer&gt; lineNumbers</Member>
+        <Member type="Constructor">public ConcordanceDataElement(String word)</Member>
+        <Member type="Method">public void addPage()</Member>
+        <Member type="Method">public int compareTo(ConcordanceDataElement anotherDataElement)</Member>
+        <Member type="Method">public LinkedList&lt;Integer&gt; getList()</Member>
+        <Member type="Method">public String getWord()</Member>
+        <Member type="Method">public int hashCode()</Member>
+        <Member type="Method">public String toString()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ConcordanceGui</Name>
+        <Access>Public</Access>
+        <Location left="788" top="1278" />
+        <Size width="162" height="216" />
+        <Collapsed>True</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Association" first="3" second="2">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>872</X>
+          <Y>1661</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="4" second="3">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>871</X>
+          <Y>2071</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+      </Relationship>
+      <Relationship type="Realization" first="3" second="1">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="2" second="0">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="2" second="5">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>
